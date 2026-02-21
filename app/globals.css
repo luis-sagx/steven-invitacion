@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --color-navy-deep: #050a18;
+  --color-navy-light: #0e162d;
+  --color-accent-blue: #4f6d7a;
+}
+
+@layer base {
+  body {
+    @apply bg-navy-deep text-slate-300 font-sans antialiased overflow-x-hidden;
+  }
+  ::selection {
+    @apply bg-accent-blue text-white;
+  }
+}
+
+@layer utilities {
+  .biotech-pattern {
+    background-image: radial-gradient(
+      rgba(79, 109, 122, 0.15) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 50px 50px;
+  }
+
+  .glow-effect {
+    background: radial-gradient(
+      circle at center,
+      rgba(79, 109, 122, 0.1) 0%,
+      transparent 70%
+    );
+  }
+
+  .glass-card {
+    background: rgba(14, 22, 45, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .modal-overlay {
+    background: rgba(5, 10, 24, 0.85);
+    backdrop-filter: blur(8px);
+  }
+}
