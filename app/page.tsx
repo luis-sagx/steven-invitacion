@@ -19,6 +19,10 @@ const BiotechBackground = dynamic(
   { ssr: false },
 )
 
+const WalkingPet = dynamic(() => import('@/components/WalkingPet'), {
+  ssr: false,
+})
+
 const ESPE_MAPS_URL =
   'https://www.google.com/maps/search/Universidad+de+las+Fuerzas+Armadas+ESPE+Sangolqu%C3%AD+Pichincha+Ecuador'
 
@@ -153,6 +157,7 @@ export default function Page() {
       </main>
 
       <RsvpModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <WalkingPet />
     </div>
   )
 }

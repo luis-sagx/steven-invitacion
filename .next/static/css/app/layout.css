@@ -217,26 +217,20 @@
   .start {
     inset-inline-start: var(--spacing);
   }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
   .top-4 {
     top: calc(var(--spacing) * 4);
   }
   .top-\[5\%\] {
     top: 5%;
   }
-  .top-\[10\%\] {
-    top: 10%;
-  }
-  .right-0 {
-    right: calc(var(--spacing) * 0);
-  }
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
   .right-\[-5\%\] {
     right: -5%;
+  }
+  .bottom-4 {
+    bottom: calc(var(--spacing) * 4);
   }
   .bottom-\[5\%\] {
     bottom: 5%;
@@ -249,6 +243,9 @@
   }
   .z-10 {
     z-index: 10;
+  }
+  .z-40 {
+    z-index: 40;
   }
   .z-50 {
     z-index: 50;
@@ -331,17 +328,20 @@
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
   .h-\[1px\] {
     height: 1px;
   }
+  .h-\[72px\] {
+    height: 72px;
+  }
   .h-\[600px\] {
     height: 600px;
-  }
-  .h-full {
-    height: 100%;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -367,8 +367,14 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-96 {
     width: calc(var(--spacing) * 96);
+  }
+  .w-\[72px\] {
+    width: 72px;
   }
   .w-\[600px\] {
     width: 600px;
@@ -484,6 +490,9 @@
   }
   .stroke-\[1px\] {
     stroke-width: 1px;
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
@@ -628,9 +637,6 @@
       color: var(--color-slate-600);
     }
   }
-  .opacity-60 {
-    opacity: 60%;
-  }
   .opacity-100 {
     opacity: 100%;
   }
@@ -669,6 +675,10 @@
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
   }
   .hover\:border-white\/20 {
     &:hover {
@@ -766,6 +776,11 @@
   .sm\:text-\[10px\] {
     @media (width >= 40rem) {
       font-size: 10px;
+    }
+  }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
     }
   }
   .md\:p-12 {

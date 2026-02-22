@@ -128,8 +128,17 @@ function HexGrid({
 }
 
 /* ─── Floating icon ───────────────────────────────────────────────────── */
+// mobileOnly:false → hidden on mobile, shown on md+
 const floatingIcons = [
-  { Icon: Dna, top: '8%', left: '3%', size: 28, delay: 0, duration: 8 },
+  {
+    Icon: Dna,
+    top: '8%',
+    left: '3%',
+    size: 28,
+    delay: 0,
+    duration: 8,
+    mobileOnly: false,
+  },
   {
     Icon: FlaskConical,
     top: '18%',
@@ -137,6 +146,7 @@ const floatingIcons = [
     size: 22,
     delay: 1.5,
     duration: 10,
+    mobileOnly: false,
   },
   {
     Icon: Microscope,
@@ -145,12 +155,53 @@ const floatingIcons = [
     size: 26,
     delay: 0.8,
     duration: 9,
+    mobileOnly: true,
   },
-  { Icon: Atom, top: '70%', right: '3%', size: 30, delay: 2, duration: 11 },
-  { Icon: Beaker, top: '38%', right: '5%', size: 20, delay: 0.4, duration: 7 },
-  { Icon: TestTube, top: '85%', left: '5%', size: 22, delay: 1, duration: 12 },
-  { Icon: Dna, top: '45%', left: '88%', size: 18, delay: 3, duration: 9 },
-  { Icon: Atom, top: '25%', left: '92%', size: 24, delay: 1.2, duration: 10 },
+  {
+    Icon: Atom,
+    top: '70%',
+    right: '3%',
+    size: 30,
+    delay: 2,
+    duration: 11,
+    mobileOnly: true,
+  },
+  {
+    Icon: Beaker,
+    top: '38%',
+    right: '5%',
+    size: 20,
+    delay: 0.4,
+    duration: 7,
+    mobileOnly: true,
+  },
+  {
+    Icon: TestTube,
+    top: '85%',
+    left: '5%',
+    size: 22,
+    delay: 1,
+    duration: 12,
+    mobileOnly: true,
+  },
+  {
+    Icon: Dna,
+    top: '45%',
+    left: '88%',
+    size: 18,
+    delay: 3,
+    duration: 9,
+    mobileOnly: true,
+  },
+  {
+    Icon: Atom,
+    top: '25%',
+    left: '92%',
+    size: 24,
+    delay: 1.2,
+    duration: 10,
+    mobileOnly: true,
+  },
 ]
 
 export default function BiotechBackground() {
@@ -165,11 +216,12 @@ export default function BiotechBackground() {
       {/* Central glow */}
       <div className="absolute inset-0 glow-effect" />
 
-      {/* Molecule networks */}
+      {/* Molecule networks — desktop only */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, delay: 0.3 }}
+        className="hidden md:block"
       >
         <MoleculeNetwork
           style={{ bottom: 80, right: 90 }}
@@ -181,6 +233,7 @@ export default function BiotechBackground() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, delay: 0.8 }}
+        className="hidden md:block"
       >
         <MoleculeNetwork
           style={{ top: 60, left: 100 }}
@@ -188,11 +241,12 @@ export default function BiotechBackground() {
         />
       </motion.div>
 
-      {/* Hex cell grids */}
+      {/* Hex cell grids — desktop only */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 1 }}
+        className="hidden md:block"
       >
         <HexGrid
           style={{ bottom: 20, left: -20 }}
@@ -204,6 +258,7 @@ export default function BiotechBackground() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 1.2 }}
+        className="hidden md:block"
       >
         <HexGrid
           style={{ top: -20, right: 60 }}
@@ -227,7 +282,7 @@ export default function BiotechBackground() {
 
       {/* Floating biotech icons */}
       {floatingIcons.map(
-        ({ Icon, top, left, right, size, delay, duration }, i) => (
+        ({ Icon, top, left, right, size, delay, duration, mobileOnly }, i) => (
           <motion.div
             key={i}
             style={{ position: 'absolute', top, left, right }}
@@ -237,6 +292,7 @@ export default function BiotechBackground() {
               opacity: { duration: 1.5, delay },
               y: { duration, repeat: Infinity, ease: 'easeInOut', delay },
             }}
+            className={mobileOnly ? 'hidden md:block' : ''}
           >
             <Icon
               width={size}

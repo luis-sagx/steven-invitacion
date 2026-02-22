@@ -4,5 +4,11 @@
     "files": [
       "static/chunks/_app-pages-browser_components_BiotechBackground_tsx.js"
     ]
+  },
+  "app/page.tsx -> @/components/WalkingPet": {
+    "id": "app/page.tsx -> @/components/WalkingPet",
+    "files": [
+      "static/chunks/_app-pages-browser_components_WalkingPet_tsx.js"
+    ]
   }
 }
