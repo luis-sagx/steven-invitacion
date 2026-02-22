@@ -10,9 +10,14 @@ import {
   Map as MapIcon,
   FlaskConical,
   Microscope,
-  Search,
 } from 'lucide-react'
+import dynamic from 'next/dynamic'
 import RsvpModal from '@/components/RsvpModal'
+
+const BiotechBackground = dynamic(
+  () => import('@/components/BiotechBackground'),
+  { ssr: false },
+)
 
 const ESPE_MAPS_URL =
   'https://www.google.com/maps/search/Universidad+de+las+Fuerzas+Armadas+ESPE+Sangolqu%C3%AD+Pichincha+Ecuador'
@@ -22,38 +27,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative">
-      {/* Background Layers */}
-      <div className="fixed inset-0 pointer-events-none biotech-pattern" />
-      <div className="fixed inset-0 pointer-events-none glow-effect" />
-
-      {/* Decorative Circles */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1.5 }}
-          transition={{ duration: 2, ease: 'easeOut' }}
-          className="absolute top-[10%] left-[10%] w-96 h-96 border border-accent-blue rounded-full"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.05 }}
-          transition={{ duration: 3 }}
-          className="absolute bottom-[5%] right-[-5%] w-[600px] h-[600px] border border-white rounded-full"
-        />
-
-        <img
-          alt=""
-          className="absolute top-20 right-20 w-64 h-64 object-cover rounded-full opacity-10 grayscale blur-sm"
-          src="https://picsum.photos/seed/biotech1/800/800"
-          referrerPolicy="no-referrer"
-        />
-        <img
-          alt=""
-          className="absolute bottom-20 left-10 w-80 h-80 object-cover rounded-full opacity-5 grayscale blur-md"
-          src="https://picsum.photos/seed/biotech2/800/800"
-          referrerPolicy="no-referrer"
-        />
-      </div>
+      <BiotechBackground />
 
       <main className="relative z-10 w-full max-w-4xl px-6 py-20 text-center">
         <motion.div

@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"app/page.tsx -> @/components/BiotechBackground\":{\"id\":\"app/page.tsx -> @/components/BiotechBackground\",\"files\":[\"static/chunks/_app-pages-browser_components_BiotechBackground_tsx.js\"]}}"
