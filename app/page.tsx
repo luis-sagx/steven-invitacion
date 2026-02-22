@@ -10,6 +10,7 @@ import {
   Map as MapIcon,
   FlaskConical,
   Microscope,
+  Download,
 } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import RsvpModal from '@/components/RsvpModal'
@@ -129,17 +130,34 @@ export default function Page() {
             Confirmar Asistencia
           </motion.button>
 
-          <div className="flex gap-4">
-            <span className="text-slate-500">•</span>
-            <a
+          <div className="flex flex-wrap justify-center gap-6">
+            <span className="text-slate-500 hidden sm:inline self-center">
+              •
+            </span>
+            <motion.a
               href={ESPE_MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 uppercase tracking-widest text-slate-400 hover:text-white transition-colors border-b border-transparent hover:border-white/20 pb-1"
             >
               <MapIcon className="w-3 h-3" />
               Ver Ubicación
-            </a>
+            </motion.a>
+            <span className="text-slate-500 hidden sm:inline self-center">
+              •
+            </span>
+            <motion.a
+              href="/Invitacion-Steven-Sagnay.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 uppercase tracking-widest text-slate-400 hover:text-white transition-colors border-b border-transparent hover:border-white/20 pb-1"
+            >
+              <Download className="w-3 h-3" />
+              Guardar Invitación
+            </motion.a>
           </div>
         </motion.div>
 

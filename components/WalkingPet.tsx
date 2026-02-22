@@ -59,8 +59,8 @@ export default function WalkingPet() {
         <Image
           src="/mono.png"
           alt="mono caminando"
-          width={55}
-          height={55}
+          width={60}
+          height={60}
           className="object-contain"
           draggable={false}
         />
