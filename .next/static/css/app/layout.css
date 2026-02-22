@@ -328,17 +328,11 @@
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
   .h-\[1px\] {
     height: 1px;
-  }
-  .h-\[72px\] {
-    height: 72px;
   }
   .h-\[600px\] {
     height: 600px;
@@ -367,14 +361,8 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
-  }
   .w-96 {
     width: calc(var(--spacing) * 96);
-  }
-  .w-\[72px\] {
-    width: 72px;
   }
   .w-\[600px\] {
     width: 600px;

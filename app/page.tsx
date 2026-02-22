@@ -24,7 +24,7 @@ const WalkingPet = dynamic(() => import('@/components/WalkingPet'), {
 })
 
 const ESPE_MAPS_URL =
-  'https://www.google.com/maps/search/Universidad+de+las+Fuerzas+Armadas+ESPE+Sangolqu%C3%AD+Pichincha+Ecuador'
+  'https://www.google.com/maps/place/Sal%C3%B3n+2000/@-0.3146464,-78.4459245,17z/data=!4m14!1m7!3m6!1s0x91d5bd12538eb13b:0x907c61f1abbe45ab!2sUniversidad+de+las+Fuerzas+Armadas+ESPE!8m2!3d-0.314821!4d-78.4425193!16s%2Fg%2F11bc5w_2vf!3m5!1s0x91d5bd13972abe89:0x94553f862fee9fda!8m2!3d-0.3149467!4d-78.4457037!16s%2Fg%2F11c7p0gwkt?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D'
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false)
